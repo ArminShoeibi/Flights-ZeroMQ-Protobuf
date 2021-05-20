@@ -1,0 +1,26 @@
+﻿syntax = "proto3";
+option csharp_namespace = "Flights.Messages";
+import "google/protobuf/timestamp.proto";
+
+enum TravelClass {
+	NONE = 0;
+	FIRST_CLASS = 1;
+	BUSINESS_CLASS = 2;
+	ECONOMY_CLASS = 3;
+}
+
+message CreateFlightDto {
+	string flight_number = 1;
+	string origin = 2;
+	string destination = 3;
+	string airline = 4;
+	double adult_fare = 6;
+	double child_fare = 7;
+	double infant_fare = 8;
+	TravelClass travel_class = 5;
+}
+
+message CreateFlightResultDto {
+	bool is_successful = 1;
+	string message = 2;
+}
